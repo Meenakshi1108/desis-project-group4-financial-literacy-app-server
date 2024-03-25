@@ -59,6 +59,33 @@ async function run() {
       }
     });
 
+    // Route to fetch currencies
+    app.get("/api/currencies", async (req, res) => {
+      try {
+        const database = client.db("desisdb");
+        const collection = database.collection("currencies");
+        const currencies = await collection.find({}).toArray();
+        res.json(currencies);
+      
+      } catch (err) {
+        console.error("Error fetching currencies:", err);
+        res.status(500).json({ error: "Internal server error" });
+      }
+    });
+
+    // Route to fetch stocks
+    app.get("/api/stocks", async (req, res) => {
+      try {
+        const database = client.db("desisdb");
+        const collection = database.collection("stocks");
+        const stocks = await collection.find({}).toArray();
+        res.json(stocks);
+      } catch (err) {
+        console.error("Error fetching stocks:", err);
+        res.status(500).json({ error: "Internal server error" });
+      }
+    });
+
     // Route to fetch data by category
     app.get('/api/data/:category', async (req, res) => {
       try {
