@@ -22,7 +22,7 @@ This is the server component of Finzo, a financial literacy web application aime
 To set up the Finzo Server locally, follow these steps:
 
 1. Clone the repository:
-git clone <repository_url>
+git clone https://github.com/Meenakshi1108/desis-project-group4-financial-literacy-app-server.git
 
 2. Navigate to the server directory:
 cd desis-project-group4-financial-literacy-app-server
