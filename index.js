@@ -21,7 +21,7 @@ const uri = process.env.MONGODB_URI;
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/blog", Router);
+app.use("/", Router);
 
 // MongoDB client
 const client = new MongoClient(uri, {
